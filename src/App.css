@@ -1,33 +1,69 @@
-.App {
-  text-align: center;
+html, body {
+  height: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+p {
+  padding: 0;
+  margin: 0;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  padding: 5px;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  border:1px solid black;
+  border-radius: 50%;
+}
+
+.main--content-wrapper {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
+.advertise--list-block {
+  border: 1px solid black;
+  width: 50%;
+  min-height: 200px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.postInfo {
+  min-height: 50px;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 25px;
+}
+
+.postInfo .postDate{
+  height: 30px;
+  border-bottom: 1px solid black;
+}
+
+.postInfo p.info {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.postInfo .name {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.postInfo .postIndicator, .postInfo .paymentIndicator {
+  display: inline-block;
+  color: #fff;
+  background-color: #000;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  padding: 0px;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 18px;
 }

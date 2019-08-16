@@ -1,0 +1,8 @@
+.main-settings-bar {
+    height: 100%;
+    border-left: 1px solid black;
+    transition: all linear 3ms;
+    position: absolute;
+    right: 50px;
+    top: 0;
+}
