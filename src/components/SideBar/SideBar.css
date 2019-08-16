@@ -1,8 +1,16 @@
 .main-settings-bar {
     height: 100%;
+    width: 300px;
+    padding: 10px 5px;
+    box-sizing: border-box;
     border-left: 1px solid black;
-    transition: all linear 3ms;
+    transition: all linear 300ms;
     position: absolute;
-    right: 50px;
+    right: -300px;
     top: 0;
+    z-index: 2;
+}
+
+.main-settings-bar.opened {
+    right: 0;
 }
