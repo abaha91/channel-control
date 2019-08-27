@@ -12,13 +12,33 @@ p {
 
 .App-header {
   padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.logo {
-  width: 70px;
+.App-header .logo {
+   width: 70px;
+   height: 70px;
+   border:1px solid black;
+   border-radius: 50%;
+   display: inline-block;
+ }
+
+.App-header .settings-launcher {
   height: 70px;
-  border:1px solid black;
-  border-radius: 50%;
+  width: 70px;
+  line-height: 94px;
+  text-align: center;
+}
+.App-header .menuImage {
+  width: 45px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.icon-wrapper {
+  /*background: url(./src/img/icons/menu.png);*/
 }
 
 .main--content-wrapper {
@@ -67,3 +87,5 @@ p {
   text-align: center;
   line-height: 18px;
 }
+
+
