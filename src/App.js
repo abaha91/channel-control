@@ -3,7 +3,7 @@ import Header from './components/Header/Header';
 import Content from './components/Content/Content';
 import SideBar from './components/SideBar/SideBar';
 import './App.css';
-import SettingsBarContext  from './context/AppContext';
+import SettingsBarContext  from 'Context/AppContext/AppContext';
 
 
 class App extends React.Component {
@@ -11,15 +11,15 @@ class App extends React.Component {
     constructor(props) {
         super(props);
 
-        this.setIsOpenedSettingsBar = isOpenedSettingsBar => {
+        this.setSettingsBarVisibility = () => {
             this.setState({
-                isOpenedSettingsBar: !isOpenedSettingsBar,
+                settingsBarVisibility: !this.state.settingsBarVisibility,
             });
         };
 
         this.state = {
-            isOpenedSettingsBar: true,
-            setIsOpenedSettingsBar: this.setIsOpenedSettingsBar,
+            settingsBarVisibility: false,
+            setSettingsBarVisibility: this.setSettingsBarVisibility,
         };
 
     }
@@ -31,7 +31,9 @@ class App extends React.Component {
                 <SettingsBarContext.Provider value={this.state}>
                     <SideBar />
                 </SettingsBarContext.Provider>
-                <Header />
+                <SettingsBarContext.Provider value={this.state}>
+                    <Header />
+                </SettingsBarContext.Provider>
                 <Content />
             </div>
         );

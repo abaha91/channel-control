@@ -1,5 +1,7 @@
 import React from 'react';
 import menu from 'Images/icons/menu.png';
+import SettingsBarContext  from 'Context/AppContext/AppContext';
+
 
 class Header extends React.Component {
 
@@ -9,9 +11,16 @@ class Header extends React.Component {
                 <div className="logo frontend">
                     <img src="" alt=""/>
                 </div>
-                <div className="settings-launcher">
-                    <img className="menuImage" src={menu}/>
-                </div>
+                <SettingsBarContext.Consumer>
+                    {
+                        (context: any) => (
+                            <div className="settings-launcher" onClick={context.setSettingsBarVisibility}>
+                                <img className="menuImage" src={menu}/>
+                            </div>
+                        )
+                    }
+
+                </SettingsBarContext.Consumer>
             </header>
         );
     }
