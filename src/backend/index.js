@@ -1,12 +1,14 @@
-const http = require('http');
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const app = express();
 const port = 4300;
 
-const server = http.createServer((request, response) => {
-   if (request.method === 'GET')  {
-       response.end('Hello world');
-   }
-});
+mongoose.connect("mongodb://localhost:27017/common_db");
 
-server.listen(port, () => {
+app.use(bodyParser.json());
+app.use('/api', require('./routes/api'));
+
+app.listen(port, () => {
     console.log(`Server running on port: ${port}`);
 });
