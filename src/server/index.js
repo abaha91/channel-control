@@ -7,7 +7,7 @@ const port = 4300;
 mongoose.connect("mongodb://localhost:27017/common_db");
 
 app.use(bodyParser.json());
-app.use('/api', require('./routes/api'));
+app.use('/', require('./routes/api'));
 
 app.listen(port, () => {
     console.log(`Server running on port: ${port}`);

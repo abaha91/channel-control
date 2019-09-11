@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 let Schema = mongoose.Schema;
+
 const ChannelSchema = new Schema({
     name: String,
     iconUrl: String,

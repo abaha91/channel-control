@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server",
-    "start:node": "nodemon src/backend/index.js"
+    "start:node": "nodemon src/server/index.js"
   },
   "eslintConfig": {
     "extends": "react-app"
