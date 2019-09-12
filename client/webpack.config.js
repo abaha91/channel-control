@@ -21,7 +21,10 @@ module.exports = {
         rules: [
 
             { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
-            { test: /\.ts|\.tsx$/, loader: 'ts-loader'},
+            {
+                test: /\.ts|\.tsx$/,
+                loader: 'ts-loader',
+            },
             {
                 test: /\.css$/,
                 use: [
@@ -52,7 +55,7 @@ module.exports = {
     devServer: {
         contentBase: path.join(__dirname, 'public'),
         compress: true,
-        port: 4300,
+        port: 3000,
         hot: true,
     }
 };

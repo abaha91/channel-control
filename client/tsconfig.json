@@ -22,7 +22,7 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "isolatedModules": true
   },
   "exclude": [
     "node_modules",
@@ -37,6 +37,6 @@
     "typePatches"
   ],
   "include": [
-    "src"
+    "./src"
   ]
 }

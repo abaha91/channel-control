@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Channel = require('./../model');
+const Channel = require('../model');
 
 router.get('/', (request, response) => {
     response.send('Here will be channely view soon');
