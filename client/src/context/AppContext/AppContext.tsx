@@ -1,8 +1,8 @@
 import React from 'react';
 
-const SettingsBarContext: any = React.createContext({
+const AppContext: any = React.createContext({
     settingsBarVisibility: true,
     setSettingsBarVisibility: () => {}
 });
 
-export default SettingsBarContext;
+export default AppContext;

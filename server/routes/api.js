@@ -6,6 +6,11 @@ router.get('/', (request, response) => {
     response.send('Here will be channely view soon');
 });
 
+router.get('/channel/:id', (request, response) => {
+    response.setHeader('Access-Control-Allow-Origin', '*');
+    Channel.findOne({_id: request.params.id}).then(channel => response.send(channel));
+});
+
 router.post("/channels", (request, response) => {
     Channel.create(request.body)
         .then(channel => {

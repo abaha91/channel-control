@@ -51,5 +51,6 @@
       "@babel/react",
       "@babel/preset-typescript"
     ]
-  }
+  },
+  "proxy": "http://localhost:4300/"
 }

@@ -7,21 +7,22 @@ class Header extends React.Component {
 
     render () {
         return (
-            <header className="App-header">
-                <div className="logo frontend">
-                    <img src="" alt=""/>
-                </div>
-                <SettingsBarContext.Consumer>
-                    {
-                        (context: any) => (
-                            <div className="settings-launcher" onClick={context.setSettingsBarVisibility}>
-                                <img className="menuImage" src={menu}/>
-                            </div>
-                        )
-                    }
+            <SettingsBarContext.Consumer>
+                {(context: any) => (
+                    <header className="App-header">
+                        <div className="logo frontend">
+                            <img src="" alt=""/>
+                        </div>
+                        <div className="title">{context.channelData.name}</div>
 
-                </SettingsBarContext.Consumer>
-            </header>
+                        <div className="settings-launcher" onClick={context.setSettingsBarVisibility}>
+                            <img className="menuImage" src={menu}/>
+                        </div>
+                    </header>
+                    )
+                }
+            </SettingsBarContext.Consumer>
+
         );
     }
 
