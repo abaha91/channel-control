@@ -1,8 +1,14 @@
 import React from 'react';
 
 const AppContext: any = React.createContext({
-    settingsBarVisibility: true,
-    setSettingsBarVisibility: () => {}
+    isAuth: false,
+    isRegistrationProcess: false,
+    isLoginProcess: false,
+    settingsBarVisibility: false,
+    channelData: undefined,
+    setSettingsBarVisibility: () => {},
+    setIsLoginProcess: () => {},
+    setIsRegistrationProcess: () => {},
 });
 
 export default AppContext;

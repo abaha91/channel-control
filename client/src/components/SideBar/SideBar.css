@@ -1,7 +1,7 @@
 .main-settings-bar {
     height: 100%;
     width: 300px;
-    padding: 10px 5px;
+    padding: 10px 25px;
     box-sizing: border-box;
     border-left: 1px solid black;
     transition: all linear 300ms;
@@ -10,6 +10,10 @@
     top: 0;
     z-index: 2;
     background: #fff;
+}
+
+.main-settings-bar .auth-link {
+    display: block;
 }
 
 .main-settings-bar.opened {

@@ -16,10 +16,10 @@ p {
   position: relative;
   overflow: hidden;
   height: 100%;
+  padding: 0 15px;
 }
 
 .App-header {
-  padding: 5px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -34,8 +34,6 @@ p {
  }
 
 .App-header .settings-launcher {
-  height: 70px;
-  width: 70px;
   line-height: 94px;
   text-align: center;
 }
@@ -45,6 +43,11 @@ p {
   cursor: pointer;
 }
 
+.App-header .app-title {
+  font-size: 20px;
+  line-height: 72px;
+
+}
 .icon-wrapper {
   /*background: url(./src/img/icons/menu.png);*/
 }

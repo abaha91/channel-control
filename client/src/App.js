@@ -16,9 +16,33 @@ class App extends React.Component {
             });
         };
 
+        this.setIsLoginProcess = () => {
+            this.setState({
+                isLoginProcess: true,
+                isRegistrationProcess: false,
+                settingsBarVisibility: false,
+
+            });
+        };
+
+        this.setIsRegistrationProcess = () => {
+            this.setState({
+                isRegistrationProcess: true,
+                isLoginProcess: false,
+                settingsBarVisibility: false,
+            });
+        };
+
+
+
         this.state = {
+            isAuth: false,
+            isRegistrationProcess: false,
+            isLoginProcess: false,
             settingsBarVisibility: false,
             setSettingsBarVisibility: this.setSettingsBarVisibility,
+            setIsLoginProcess: this.setIsLoginProcess,
+            setIsRegistrationProcess: this.setIsRegistrationProcess,
             channelData: undefined,
         };
 
@@ -42,18 +66,14 @@ class App extends React.Component {
 
 
     render () {
-        const channelData = this.state.channelData;
-
         if (this.state.channelData) {
             return (
                 <div className="App">
                     <AppContext.Provider value={this.state}>
                         <SideBar />
-                    </AppContext.Provider>
-                    <AppContext.Provider value={this.state}>
                         <Header />
+                        <Content />
                     </AppContext.Provider>
-                    <Content />
                 </div>
             );
         } else {

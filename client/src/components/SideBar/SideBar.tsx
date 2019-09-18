@@ -1,6 +1,6 @@
 import React from 'react';
 import './SideBar.css';
-import SettingsBarContext from 'Context/AppContext/AppContext';
+import AppContext from 'Context/AppContext/AppContext';
 
 class SideBar extends React.Component <any, any> {
     constructor(props: any) {
@@ -9,14 +9,23 @@ class SideBar extends React.Component <any, any> {
 
     render () {
         return (
-            <SettingsBarContext.Consumer>
+            <AppContext.Consumer>
                 {(context: any) => (
                         <aside className={"main-settings-bar " + (context.settingsBarVisibility ? 'opened' : '')}>
-                            <div className="channelName">Frontender's notes</div>
-                            <div className="channelName">Big data | Machine learning</div>
+                            { context.isAuth ?
+                                <React.Fragment>
+                                    <div className="channelName">Frontender's notes</div>
+                                    <div className="channelName">Big data | Machine learning</div>
+                                </React.Fragment> :
+                                <React.Fragment>
+                                    <span className="auth-link" onClick={context.setIsLoginProcess}>Вход</span>
+                                    <span className="auth-link" onClick={context.setIsRegistrationProcess}>Регистрация</span>
+                                </React.Fragment>
+                            }
+
                         </aside>
                     )}
-            </SettingsBarContext.Consumer>
+            </AppContext.Consumer>
         );
     }
 

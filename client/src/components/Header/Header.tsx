@@ -10,10 +10,10 @@ class Header extends React.Component {
             <SettingsBarContext.Consumer>
                 {(context: any) => (
                     <header className="App-header">
-                        <div className="logo frontend">
-                            <img src="" alt=""/>
-                        </div>
-                        <div className="title">{context.channelData.name}</div>
+                        {/*<div className="logo frontend">*/}
+                            {/*<img src="" alt=""/>*/}
+                        {/*</div>*/}
+                        <div className="app-title">Application</div>
 
                         <div className="settings-launcher" onClick={context.setSettingsBarVisibility}>
                             <img className="menuImage" src={menu}/>
