@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const app = express();
-const port = 4300;
+const port = 4000;
 
 mongoose.connect("mongodb://localhost:27017/common_db");
 

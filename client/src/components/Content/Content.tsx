@@ -1,10 +1,34 @@
 import React from 'react';
 import AppContext  from 'Context/AppContext/AppContext';
+import Provider  from 'Provider/providers';
 import './Forms.css';
 
 class Content extends React.Component {
 
+    private provider: any;
 
+    constructor(props: any) {
+        super(props);
+        this.provider = new Provider();
+    }
+
+
+    state = {
+        registrationData: {
+            email: '',
+            name: '',
+            password: '',
+        }
+    };
+
+    handleChangeRegistration = (event: any) => {
+        const newState: any = this.state.registrationData;
+        newState[event.target.name] = event.target.value;
+
+        this.setState({
+            registrationData: newState,
+        })
+    };
 
     render () {
         return (
@@ -26,13 +50,40 @@ class Content extends React.Component {
         );
     }
 
+    register = (event: React.SyntheticEvent) =>{
+        event.preventDefault();
+        this.provider.register(this.state.registrationData).then(() => {
+            console.log('1');
+        })
+    }
+
     renderRegistrationForm() {
         return (
             <React.Fragment>
-                <form action="" className='auth-form'>
-                    <input type="text" className="auth--text-input" name="email" placeholder="Введите email"/>
-                    <input type="text" className="auth--text-input" name="name" placeholder="Введите имя"/>
-                    <input type="text" className="auth--text-input" name="password" placeholder="Введите пароль"/>
+                <form action="" className='auth-form' onSubmit={this.register}>
+                    <input
+                        type="text"
+                        className="auth--text-input"
+                        name="email"
+                        placeholder="Введите email"
+                        onChange={this.handleChangeRegistration}
+                        value={this.state.registrationData.email}
+                    />
+                    <input
+                        type="text"
+                        className="auth--text-input"
+                        name="name"
+                        placeholder="Введите имя"
+                        onChange={this.handleChangeRegistration}
+                        value={this.state.registrationData.name}
+                    />
+                    <input type="text"
+                           className="auth--text-input"
+                           name="password"
+                           placeholder="Введите пароль"
+                           onChange={this.handleChangeRegistration}
+                           value={this.state.registrationData.password}
+                    />
                     <input type="submit" className="auth--submit-button" value="Зарегистрироваться"/>
                 </form>
             </React.Fragment>

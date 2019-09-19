@@ -15,6 +15,8 @@ module.exports = {
             Images: path.resolve(__dirname, 'src/img'),
             Components: path.resolve(__dirname, 'src/components'),
             Context: path.resolve(__dirname, 'src/context'),
+            Provider: path.resolve(__dirname, 'src/providers'),
+            Interfaces: path.resolve(__dirname, 'src/interfaces'),
         }
     },
     module: {
