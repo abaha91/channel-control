@@ -1,5 +1,5 @@
 import React from 'react';
-import {IRegistration} from "Interfaces/IRegistration";
+import IRegistration from "Interfaces/IRegistration";
 
 
 class Provider {
